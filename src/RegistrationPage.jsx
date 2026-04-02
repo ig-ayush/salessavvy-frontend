@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import './assets/styles.css';
 import { useNavigate } from 'react';
+import { ThemeToggle } from './ThemeToggle';
 
 export default function RegistrationPage() {
   const [username, setUsername] = useState('');
@@ -38,7 +39,11 @@ export default function RegistrationPage() {
   };
 
   return (
-    <div className="page-container">
+    <div className="page-layout">
+      <div className="auth-theme-slot">
+        <ThemeToggle />
+      </div>
+      <div className="page-container">
       <div className="form-container">
         <h1 className="form-title">Register</h1>
         {error && <p className="error-message">{error}</p>}
@@ -99,6 +104,7 @@ export default function RegistrationPage() {
           <a href="/" className="form-link">Log in here</a>
         </p>
       </div>
+    </div>
     </div>
   );
 }

@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Footer } from "./Footer";
 import Logo from "./Logo";
+import { ThemeToggle } from "./ThemeToggle";
 import "./assets/styles.css";
 import CustomModal from "./CustomModal";
 
@@ -332,6 +333,7 @@ const AdminDashboard = () => {
       <header className="dashboard-header">
         <Logo />
         <div className="user-info">
+          <ThemeToggle className="theme-toggle--navbar" />
           <span className="username">Admin</span>
           <div className="dropdown">
             <button className="dropdown-button" onClick={handleLogout}>

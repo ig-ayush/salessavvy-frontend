@@ -1,6 +1,7 @@
 import React from 'react';
 import { CartIcon } from './CartIcon';
 import { ProfileDropdown } from './ProfileDropdown';
+import { ThemeToggle } from './ThemeToggle';
 import './assets/styles.css';
 import Logo from './Logo';
 
@@ -10,6 +11,7 @@ export function Header({ cartCount, username }) {
       <div className="header-content">
         <Logo />
         <div className="header-actions">
+          <ThemeToggle />
           <CartIcon count={cartCount} />
           <ProfileDropdown username={username} />
         </div>

@@ -41,10 +41,23 @@ export function ProfileDropdown({ username }) {
         <span className="username">{username || 'Guest'}</span> {/* Display username */}
       </button>
       {isOpen && (
-        <div className="dropdown-menu">
-          <a href="#">Profile</a>
-          <a onClick={handleOrdersClick}>Orders</a> {/* Handle Orders Click */}
-          <button className="profile-button" onClick={handleLogout}>
+        <div className="dropdown-menu dropdown-menu--open" role="menu">
+          <a href="#" role="menuitem" className="dropdown-menu__link">
+            Profile
+          </a>
+          <button
+            type="button"
+            role="menuitem"
+            className="dropdown-menu__link dropdown-menu__link--btn"
+            onClick={handleOrdersClick}
+          >
+            Orders
+          </button>
+          <button
+            type="button"
+            className="dropdown-menu__action"
+            onClick={handleLogout}
+          >
             Logout
           </button>
         </div>

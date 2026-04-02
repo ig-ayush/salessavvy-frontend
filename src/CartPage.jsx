@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "./assets/styles.css";
 import "./CartPage.css";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
@@ -156,7 +157,7 @@ const CartPage = () => {
           contact: "9999999999",
         },
         theme: {
-          color: "#3399cc",
+          color: "#f77f00",
         },
       };
 
@@ -174,15 +175,18 @@ const CartPage = () => {
 
   if (cartItems.length === 0) {
     return (
-      <div className="cart-page empty">
-        <h2>Your Cart is Empty</h2>
-        <p>Add some items to get started!</p>
+      <div className="cart-page-root">
+        <Header cartCount={0} username={username || "Guest"} />
+        <div className="cart-page empty">
+          <h2>Your Cart is Empty</h2>
+          <p>Add some items to get started!</p>
+        </div>
       </div>
     );
   }
 
   return (
-    <div style={{ width: "100vw" }}>
+    <div className="cart-page-root">
       <Header cartCount={totalProducts()} username={username} />
       <div className="cart-container">
         <div className="cart-page">

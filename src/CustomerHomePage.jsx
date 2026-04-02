@@ -11,6 +11,7 @@ export default function CustomerHomePage() {
   const [username, setUsername] = useState('');
   const [cartError, setCartError] = useState(false); // State for cart fetch error
   const [isCartLoading, setIsCartLoading] = useState(true); // State for cart loading
+  const [activeCategory, setActiveCategory] = useState('Shirts');
 
 
   useEffect(() => {
@@ -59,6 +60,7 @@ export default function CustomerHomePage() {
   };
 
   const handleCategoryClick = (category) => {
+    setActiveCategory(category);
     fetchProducts(category);
   };
 
@@ -93,7 +95,10 @@ export default function CustomerHomePage() {
         username={username}
       />
       <nav className="navigation">
-        <CategoryNavigation onCategoryClick={handleCategoryClick} />
+        <CategoryNavigation
+          onCategoryClick={handleCategoryClick}
+          activeCategory={activeCategory}
+        />
       </nav>
       <main className="main-content">
         <ProductList products={products} onAddToCart={handleAddToCart} />

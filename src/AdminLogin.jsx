@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { ThemeToggle } from "./ThemeToggle";
 import "./assets/styles.css";
 
 export default function LoginPage() {
@@ -49,6 +50,9 @@ export default function LoginPage() {
 
   return (
     <div className="page-layout">
+      <div className="auth-theme-slot">
+        <ThemeToggle />
+      </div>
       <div className="page-container1">
         <div className="form-container">
           <h1 className="form-title">Admin Login</h1>
