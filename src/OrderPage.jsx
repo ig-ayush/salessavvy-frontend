@@ -22,7 +22,7 @@ export default function OrdersPage() {
 
   const fetchOrders = async () => {
     try {
-      const response = await fetch('http://localhost:9090/api/orders', {
+      const response = await fetch('http://localhost:8080/api/orders', {
         credentials: 'include',
       });
       if (!response.ok) throw new Error('Failed to fetch orders');
