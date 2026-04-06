@@ -21,10 +21,10 @@ export default function LoginPage() {
     try {
       const response = await fetch("http://localhost:8080/api/auth/login", {
         method: "POST",
+        credentials: "include",
         headers: {
           "Content-Type": "application/json",
         },
-        credentials: "include",
         body: JSON.stringify({ username, password }),
       });
 
