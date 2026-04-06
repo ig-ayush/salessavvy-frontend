@@ -16,7 +16,7 @@ export default function RegistrationPage() {
     setError(null); // Clear previous errors
 
     try {
-      const response = await fetch('http://localhost:8080/api/users/register', {
+      const response = await fetch('https://salessavvy-backend-u6z1.onrender.com/api/users/register', {
         method: 'POST', 
         credentials: "include",
         headers: {
